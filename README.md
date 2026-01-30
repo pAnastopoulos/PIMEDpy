@@ -70,7 +70,7 @@ response = pimedpy.simulate_response(environment, ship_data, n_realizations=1000
 
 # 5. Perform statistical post-processing
 summary = pimedpy.analyze_response(response)
-print(summary)  # summary statistics of the ship response
+print(summary)  # prints ship response statistics
 ```
 
 
@@ -93,4 +93,4 @@ Contributions and collaborations are welcome. Early access and questions are enc
 
 ## License
 
-PIMEDpy will be released under the MIT License.
+PIMEDpy will be released under the MIT License. See [LICENSE](./LICENSE) for details.
