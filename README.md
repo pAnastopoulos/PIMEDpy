@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="assets/PIMEDpy_logo.png" alt="PIMEDpy logo" width="100%">
+  <img src="assets/PIMEDpy_logo.png" alt="PIMEDpy logo" width="75%">
 </p>
 
 # PIMEDpy – Probabilistic Implementations for Marine Engineering Dynamics in Python
