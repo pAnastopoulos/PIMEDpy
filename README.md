@@ -59,7 +59,7 @@ time, wave_elevation = pimedpy.generate_wave_realization(
 
 # 3. Define ship/floating structure data (simplified for example)
 ship_data = {
-    'displacement': 100.0,  # tonnes
+    'displacement': 100.0,   # tonnes
     'length': 20.0,          # meters
     'draft': 6.0,            # meters
     # add other parameters as needed
