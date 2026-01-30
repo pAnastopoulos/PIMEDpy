@@ -20,7 +20,7 @@ PIMEDpy is a Python toolkit focused on **probabilistic and statistical analysis 
 - Estimating motions of ships and other floating structures based on practical models.  
 - Assessing dynamic behaviour through probability calculation and uncertainty quantification.
 
-The toolkit is intended for research and applied studies. Resulting workflows enable inferences based on minimal input data.
+The toolkit is intended for research and applied studies. Resulting workflows enable inferences based on minimal input data, with outputs compatible with open-source CFD codes, such as OpenFOAM.
 
 
 
@@ -45,26 +45,32 @@ Installation instructions will be provided with the first release, including opt
 ```python
 import pimedpy
 
-# Define environmental conditions and ship/floating structure data
-environment = {
-    'waves': {'spectrum': 'JONSWAP', 'significant_height': 3.0, 'peak_period': 8.0},
-    'wind': {'mean_speed': 10.0},
-    'current': {'speed': 1.0}
-}
+# Example: simulate random wave excitation and ship response 
 
+# 1. Set up environmental conditions
+environment = pimedpy.create_environment(
+    waves={'spectrum': 'JONSWAP', 'significant_height': 3.0, 'peak_period': 8.0}
+)
+
+# 2. Generate a sea-wave realization based on the environment
+time, wave_elevation = pimedpy.generate_wave_realization(
+    environment['waves'], form='phases', duration=600, variance_error=0.01
+)
+
+# 3. Define ship/floating structure data (simplified for example)
 ship_data = {
-    'length': 100.0,
-    'beam': 20.0,
-    'draft': 6.0,
-    'engine_power': 5000.0
+    'displacement': 100.0,  # tonnes
+    'length': 20.0,          # meters
+    'draft': 6.0,            # meters
+    # add other parameters as needed
 }
 
-# Run a probabilistic simulation
+# 4. Run a response simulation (illustrative)
 response = pimedpy.simulate_response(environment, ship_data, n_realizations=1000)
 
-# Perform statistical post-processing
+# 5. Perform statistical post-processing
 summary = pimedpy.analyze_response(response)
-print(summary)
+print(summary)  # summary statistics of the ship response
 ```
 
 
