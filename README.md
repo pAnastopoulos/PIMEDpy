@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="assets/pimedpy_logo.png" alt="PIMEDpy logo" width="400">
+</p>
+
 # PIMEDpy – Probabilistic Implementations for Marine Engineering Dynamics in Python
 
 ![Python](https://img.shields.io/badge/Python-3.9%2B-blue)
